@@ -224,15 +224,13 @@ short decode(char **argv){
         int i;
         int j = 0;
         unsigned char buffer = 0;
-        unsigned char tempLoc = 0;
 
         printf("The phrase was: ");
 
         for(i = 0; i < rgbPixelNumber; i++){
 
           // Take a color pixel, keep the lowest 2 bits (0x3), shift to the left by an offset: 0x6 minus 2 times the separate counter j.
-          tempLoc = (pixelData[i] & 0x3) << (0x6 - (j * 0x2));
-          buffer |= tempLoc;
+          buffer |= (pixelData[i] & 0x3) << (0x6 - (j * 0x2));
 
           // Print the buffer out when it is full, and if the buffer equals 0 stop the loop.
           if(j == 3){
