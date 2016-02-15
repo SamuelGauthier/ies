@@ -24,7 +24,9 @@ Commands available:
 The 2 lower bits of the RGB pixels are used to store the input data split in chunks of 2 bits.
 ```c
 ...
-// Keep only the higher 6 bits of the color byte, add the 2 bits of the text (which have been shifted to the right accordingly then ANDED to keep only the 2 lowest bits). For 1 byte of text we need 4 bytes of color.
+// Keep only the higher 6 bits of the color byte, add the 2 bits of the text
+// (which have been shifted to the right accordingly then ANDED to keep only
+// the 2 lowest bits). For 1 byte of text we need 4 bytes of color.
 buffer = (pixelData[i] & 0xFC) | ((inputText[k] >> (0x6 - (j * 2))) & 0x3);
 ...
 ```
@@ -32,7 +34,8 @@ buffer = (pixelData[i] & 0xFC) | ((inputText[k] >> (0x6 - (j * 2))) & 0x3);
 Just do it in reverse order.
 ```c
 ...
-// Take a color pixel, keep the lowest 2 bits (0x3), shift to the left by an offset: 0x6 minus 2 times the separate counter j.
+// Take a color pixel, keep the lowest 2 bits (0x3), shift to the left by
+// an offset: 0x6 minus 2 times the separate counter j.
 buffer |= (pixelData[i] & 0x3) << (0x6 - (j * 0x2));
 ...
 ```
