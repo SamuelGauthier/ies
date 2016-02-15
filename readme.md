@@ -1,7 +1,7 @@
 # IES
 *Image Encryption System*
 ## Description
-A basic small utility to hide and retrieve any text into a 24 Bitmap image.
+A basic small utility to hide (and retrieve) any text into a 24 Bitmap image.
 ## Build
 Use the given makefile:
 ```shell
