@@ -11,7 +11,7 @@ Use the given makefile:
 Commands available:
 - -e to encrypt
 ```shell
-> ./ies -e some_image.bmp
+> ./ies -e some_image.bmp some_target_image.bmp
 > Type your phrase: <Input_text>
 ```
 - -d to decrypt
