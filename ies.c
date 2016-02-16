@@ -21,10 +21,17 @@ int main(int argc, char **argv){
     return EXIT_FAILURE;
   }
 
-  if(strcmp(argv[1], "-e") == 0){
+  if(strcmp(argv[1], "-e") == 0 && argc == 4){
+
+    // Copy the old file, if an error occurs, abord.
+    if(copy_file(argv[2], argv[3]) == ERR_CPY_FILE){
+
+      error(ERR_CPY_FILE);
+      return 1;
+    }
     return encode(argv) == 0 ? EXIT_SUCCESS : EXIT_FAILURE;
   }
-  else if(strcmp(argv[1], "-d") == 0){
+  else if(strcmp(argv[1], "-d") == 0 && argc == 3){
     return decode(argv) == 0 ? EXIT_SUCCESS : EXIT_FAILURE;
   }
   else{

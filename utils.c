@@ -127,10 +127,10 @@ int copy_file(char *old_filename, char  *new_filename){
 
 void printHelp(char **argv){
 
-  printf("usage: %s <command> <filename>\n\n", argv[0]);
+  printf("usage: %s <command>\n\n", argv[0]);
   printf("Available commands to use for the steganography executable:\n");
-  printf("\t-e\tencode file\n");
-  printf("\t-d\tdecode file\n");
+  printf("\t-e\tencode file \t=> %s -e <filename> <output>\n", argv[0]);
+  printf("\t-d\tdecode file \t=> %s -d <filename>\n", argv[0]);
   printf("/!\\ only bmp file format is supported /!\\\n");
 
 }
